@@ -1,46 +1,48 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
     Card, CardImg, CardImgOverlay, CardTitle
 } from 'reactstrap';
-import DishDetail from './DishdetailComponent';
 
-function Menu(props) {
+class Menu extends React.Component {
 
-    const [selectedDish, setDishe] = useState(null);
+    constructor(props) {
+        super(props);
+        this.state = {
+            dishes: props.dishes,
+        };
+    }
 
-    function onDishSelect(dish) {
-        setDishe(dish);
-    };
+    renderMenu() {
+        const menu = this.state.dishes.map((dish) => {
+            return (
+                <div className="col-12 col-md-5 m-1">
+                    <Card key={dish.id} onClick={() => this.props.onClick(dish.id)}>
+                        <CardImg width="100%" src={dish.image} alt={dish.name} />
+                        <CardImgOverlay>
+                            <CardTitle>{dish.name}</CardTitle>
+                        </CardImgOverlay>
+                    </Card>
+                </div >
+            );
+        });
 
-    function renderDish(dish) {
-        return (<DishDetail {...dish} />)
-    };
 
-    const menu = props.dishes.map((dish) => {
         return (
-            <div className="col-12 col-md-5 m-1">
-                <Card key={dish.id} onClick={() => onDishSelect(dish)}>
-                    <CardImg width="100%" src={dish.image} alt={dish.name} />
-                    <CardImgOverlay>
-                        <CardTitle>{dish.name}</CardTitle>
-                    </CardImgOverlay>
-                </Card>
-            </div >
-        );
-    });
-
-    return (
-        <div className='body'>
-            <div className="container">
+            < div className="container" >
                 <div className="row">
                     {menu}
                 </div>
-            </div>
-            <div className="container">
-                {renderDish(selectedDish)}
-            </div>
-        </div>
-    );
+            </div >
+        )
+    }
+
+
+    render() {
+        return (
+            this.renderMenu()
+        );
+    }
+
 }
 
 export default Menu;
