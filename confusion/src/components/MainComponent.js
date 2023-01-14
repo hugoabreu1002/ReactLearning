@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import Home from './HomeComponent';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import DishDetail from './DishdetailComponent';
 import Menu from './MenuComponent';
 import { DISHES } from '../shared/dishes';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
+import Contact from './ContactComponent';
+import { COMMENTS } from '../shared/comments';
+import { PROMOTIONS } from '../shared/promotions';
+import { LEADERS } from '../shared/leaders';
 
 class Main extends Component {
 
@@ -13,7 +17,10 @@ class Main extends Component {
         super(props);
         this.state = {
             dishes: DISHES,
-            selectedDish: null
+            selectedDish: null,
+            comments: COMMENTS,
+            promotions: PROMOTIONS,
+            leaders: LEADERS
         };
     }
 
@@ -26,6 +33,9 @@ class Main extends Component {
         const HomePage = () => {
             return (
                 <Home
+                    dish={this.state.dishes.filter((dish) => dish.featured)[0]}
+                    promotion={this.state.promotions.filter((promo) => promo.featured)[0]}
+                    leader={this.state.leaders.filter((leader) => leader.featured)[0]}
                 />
             );
         }
@@ -33,7 +43,7 @@ class Main extends Component {
             return (
                 <div>
                     < Menu dishes={this.state.dishes} onClick={(dishId) => this.onDishSelect(dishId)} />
-                    <DishDetail dish={dishToDetail} />
+                    <DishDetail dish={dishToDetail} comments={this.state.comments} />
                 </div>
             );
         }
@@ -43,6 +53,8 @@ class Main extends Component {
                 <Routes>
                     <Route path='/home' element={<HomePage />} />
                     <Route exact path='/menu' element={<MenuPage />} />
+                    <Route exact path='/contactus' element={<Contact />} />
+                    <Route path="*" element={<Navigate to="/home" replace />} />
                 </Routes>
                 <Footer />
             </div>

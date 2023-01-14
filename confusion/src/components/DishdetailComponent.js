@@ -16,11 +16,11 @@ function RenderDish({ dish }) {
     }
 }
 
-function RenderComments({ dish }) {
-    if (dish === undefined) { return }
+function RenderComments({ comments }) {
+    if (comments === undefined) { return }
     else {
 
-        const commentsText = dish.comments.map((comment) => {
+        const commentsText = comments.map((comment) => {
             return (
                 <li key={comment.id}>
                     <p>{comment.comment}</p>
@@ -55,7 +55,7 @@ const DishDetail = (props) => {
                     <RenderDish dish={props.dish} />
                 </div>
                 <div className="col-12 col-md-5 m-1">
-                    <RenderComments dish={props.dish} />
+                    <RenderComments comments={props.comments} />
                 </div>
             </div>
         </div>
