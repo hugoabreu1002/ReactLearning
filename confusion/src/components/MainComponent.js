@@ -10,6 +10,7 @@ import Contact from './ContactComponent';
 import { COMMENTS } from '../shared/comments';
 import { PROMOTIONS } from '../shared/promotions';
 import { LEADERS } from '../shared/leaders';
+import { useParams } from 'react-router-dom';
 
 class Main extends Component {
 
@@ -17,19 +18,13 @@ class Main extends Component {
         super(props);
         this.state = {
             dishes: DISHES,
-            selectedDish: null,
             comments: COMMENTS,
             promotions: PROMOTIONS,
             leaders: LEADERS
         };
     }
 
-    onDishSelect(dishId) {
-        this.setState({ selectedDish: dishId });
-    }
-
     render() {
-        const dishToDetail = this.state.dishes.filter((dish) => dish.id === this.state.selectedDish)[0];
         const HomePage = () => {
             return (
                 <Home
@@ -42,18 +37,28 @@ class Main extends Component {
         const MenuPage = () => {
             return (
                 <div>
-                    < Menu dishes={this.state.dishes} onClick={(dishId) => this.onDishSelect(dishId)} />
-                    <DishDetail dish={dishToDetail} comments={this.state.comments} />
+                    < Menu dishes={this.state.dishes} />
                 </div>
             );
         }
+
+        const DishWithId = () => {
+            const routeParams = useParams();
+            const dishToDetail = this.state.dishes.find(({ id }) => id === parseInt(routeParams.dishId, 10));
+            const commentsToDetail = this.state.comments.filter(({ dishId }) => dishId === parseInt(routeParams.dishId, 10));
+            return (
+                <DishDetail dish={dishToDetail} comments={commentsToDetail} />
+            );
+        };
+
         return (
             <div>
                 <Header />
                 <Routes>
                     <Route path='/home' element={<HomePage />} />
-                    <Route exact path='/menu' element={<MenuPage />} />
-                    <Route exact path='/contactus' element={<Contact />} />
+                    <Route path='/menu' element={<MenuPage />} />
+                    <Route path='/menu/:dishId' element={<DishWithId />} />
+                    <Route path='/contactus' element={<Contact />} />
                     <Route path="*" element={<Navigate to="/home" replace />} />
                 </Routes>
                 <Footer />
