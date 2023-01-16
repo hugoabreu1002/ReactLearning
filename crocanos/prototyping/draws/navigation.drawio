@@ -1,0 +1,118 @@
+<mxfile host="65bd71144e">
+    <diagram id="8XA3GpsOWFWgcCZsbt7i" name="Page-1">
+        <mxGraphModel dx="1769" dy="1101" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="LOGIN / Registration" style="swimlane;startSize=20;horizontal=1;containerType=tree;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="1">
+                    <mxGeometry x="320" y="290" width="470" height="270" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="2" source="22" target="26">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="70" y="110" as="sourcePoint"/>
+                        <mxPoint x="340" y="130" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="20" value="YES" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="19">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="Has Account ?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2">
+                    <mxGeometry x="80" y="30" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="CREATE ACCOUNT&amp;nbsp;&lt;br&gt;OR &lt;br&gt;LINK WITH SOCIAL MEDIA ACCOUNT" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2">
+                    <mxGeometry x="50" y="160" width="180" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="2" source="22" target="25">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="150" y="100" as="sourcePoint"/>
+                        <mxPoint x="100" y="140" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="24" value="NO" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="23">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="LOGIN" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2">
+                    <mxGeometry x="260" y="30" width="180" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="MENUS" style="swimlane;startSize=20;horizontal=1;containerType=tree;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="1">
+                    <mxGeometry x="320" y="650" width="470" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="CROCANOS DELIVERY MENU" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="36">
+                    <mxGeometry x="270" y="105" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="CROCANOS ORDER MENU" style="swimlane;" vertex="1" parent="36">
+                    <mxGeometry x="10" y="30" width="200" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="FAST MENU" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="47">
+                    <mxGeometry x="40" y="40" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="LOCAL MENU" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="47">
+                    <mxGeometry x="40" y="120" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="SOCIAL" style="swimlane;" vertex="1" parent="1">
+                    <mxGeometry x="900" y="290" width="520" height="270" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Vegan Network" style="swimlane;startSize=20;horizontal=1;childLayout=flowLayout;flowOrientation=north;resizable=0;interRankCellSpacing=50;containerType=tree;" vertex="1" parent="49">
+                    <mxGeometry x="30" y="40" width="460" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="SHARE POSTS" style="whiteSpace=wrap;html=1;" vertex="1" parent="8">
+                    <mxGeometry x="20" y="40" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="Join Groups" style="whiteSpace=wrap;html=1;" vertex="1" parent="8">
+                    <mxGeometry x="180" y="40" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="Chat with Friends" style="whiteSpace=wrap;html=1;" vertex="1" parent="8">
+                    <mxGeometry x="340" y="40" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="User SPACE" style="swimlane;startSize=20;horizontal=1;childLayout=flowLayout;flowOrientation=north;resizable=0;interRankCellSpacing=50;containerType=tree;" vertex="1" parent="49">
+                    <mxGeometry x="30" y="160" width="460" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="Profile" style="whiteSpace=wrap;html=1;" vertex="1" parent="27">
+                    <mxGeometry x="20" y="40" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="Personal Info" style="whiteSpace=wrap;html=1;" vertex="1" parent="27">
+                    <mxGeometry x="180" y="40" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="Orders" style="whiteSpace=wrap;html=1;" vertex="1" parent="27">
+                    <mxGeometry x="340" y="40" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="FREE MARKET" style="swimlane;startSize=20;horizontal=1;containerType=tree;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="1">
+                    <mxGeometry x="925" y="650" width="470" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="FOOD" style="swimlane;" vertex="1" parent="56">
+                    <mxGeometry x="10" y="30" width="200" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="BUY / SELL" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="58">
+                    <mxGeometry x="40" y="40" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" value="ORDER" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="58">
+                    <mxGeometry x="40" y="120" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="66" value="CARBON CREDIT" style="swimlane;" vertex="1" parent="56">
+                    <mxGeometry x="235" y="30" width="200" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="67" value="BUY / SELL" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="66">
+                    <mxGeometry x="40" y="75" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="72" value="" style="endArrow=classic;startArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="2" target="49">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="830" y="460" as="sourcePoint"/>
+                        <mxPoint x="880" y="410" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="73" value="" style="endArrow=classic;startArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="2" target="36">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="800" y="435" as="sourcePoint"/>
+                        <mxPoint x="910" y="435" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="74" value="" style="endArrow=classic;startArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="49" target="56">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="565" y="570" as="sourcePoint"/>
+                        <mxPoint x="565" y="660" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
