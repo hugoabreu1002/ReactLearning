@@ -29,9 +29,15 @@ The needed features for the website are:
 
 ## Menus
 
+![alt](./draws/menus_interface.png)
+
 ## Social
 
+![alt](./draws/social_interface.png)
+
 ## Free Market
+
+![alt](./draws/free_market.png)
 
 # Navigation Structure
 
@@ -40,3 +46,5 @@ The user will be able to navigate through the menus like
 ![alt](./draws/navigation.png)
 
 # References
+
+https://www.industry.gov.au/sites/default/files/open_government_partnership_committment_5.2_prototype_report.pdf
