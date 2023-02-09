@@ -3,7 +3,7 @@
   "name": "Ristorante Confusion Pizza",
   "icons": [
     {
-      "src": "assets/images/logo.png",
+      "src": "images/logo.png",
       "type": "image/png",
       "sizes": "167x123"
     }
