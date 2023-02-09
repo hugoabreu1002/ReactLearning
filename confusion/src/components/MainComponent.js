@@ -7,7 +7,7 @@ import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Contact from './ContactComponent';
 import About from './AboutUsComponent';
-import { addComment, fetchDishes, fetchComments, fetchPromos } from '../redux/ActionCreators';
+import { fetchDishes, fetchComments, fetchPromos, postComment } from '../redux/ActionCreators';
 import { connect } from 'react-redux';
 import { actions } from 'react-redux-form';
 
@@ -22,12 +22,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
 
-    addComment: (dishId, rating, author, comment) => dispatch(addComment(dishId, rating, author, comment)),
+    postComment: (dishId, rating, author, comment) => dispatch(postComment(dishId, rating, author, comment)),
     fetchDishes: () => { dispatch(fetchDishes()) },
     resetFeedbackForm: () => { dispatch(actions.reset('feedback')) },
     fetchComments: () => dispatch(fetchComments()),
     fetchPromos: () => dispatch(fetchPromos())
-
 });
 
 function withRouter(Component) {
@@ -86,7 +85,7 @@ class Main extends Component {
                 <DishDetail
                     dish={dishToDetail}
                     comments={commentsToDetail}
-                    addComment={this.props.addComment}
+                    postComment={this.props.postComment}
                     commentsErrMess={this.props.comments.errMess}
                     isLoading={this.props.dishes.isLoading}
                     errMess={this.props.dishes.errMess}
