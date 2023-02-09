@@ -3,7 +3,7 @@ import {
     Breadcrumb, BreadcrumbItem,
     Button, Row, Col, Label
 } from 'reactstrap';
-import { Control, LocalForm, Errors, Form, actions } from 'react-redux-form';
+import { Control, Errors, Form } from 'react-redux-form';
 import { Link } from 'react-router-dom';
 
 
