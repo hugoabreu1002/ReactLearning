@@ -224,7 +224,7 @@
     {
       "id": 0,
       "name": "Peter Pan",
-      "image": "images/alberto.png",
+      "image": "images/chef.png",
       "designation": "Chief Epicurious Officer",
       "abbr": "CEO",
       "featured": false,
@@ -233,7 +233,7 @@
     {
       "id": 1,
       "name": "Dhanasekaran Witherspoon",
-      "image": "images/alberto.png",
+      "image": "images/chef.png",
       "designation": "Chief Food Officer",
       "abbr": "CFO",
       "featured": false,
@@ -242,7 +242,7 @@
     {
       "id": 2,
       "name": "Agumbe Tang",
-      "image": "images/alberto.png",
+      "image": "images/chef.png",
       "designation": "Chief Taste Officer",
       "abbr": "CTO",
       "featured": false,
@@ -251,7 +251,7 @@
     {
       "id": 3,
       "name": "Alberto Somayya",
-      "image": "images/alberto.png",
+      "image": "images/chef.png",
       "designation": "Executive Chef",
       "abbr": "EC",
       "featured": true,
@@ -269,6 +269,17 @@
       "message": "afadsfds",
       "date": "2017-12-04T09:41:49.890Z",
       "id": 1
+    },
+    {
+      "date": "2023-02-09T05:32:36.011Z",
+      "firstname": "asd",
+      "lastname": "asdasd",
+      "telnum": "1231231",
+      "email": "asda@asd.com",
+      "agree": true,
+      "contactType": "Email",
+      "message": "lalalal",
+      "id": 2
     }
   ]
 }
