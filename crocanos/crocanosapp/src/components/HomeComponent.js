@@ -50,20 +50,24 @@ function About({ leaders, isLoading, errMess }) {
             <div className="container">
                 <div className="row">
                     <div className="col-12">
-                        <h3>About Us</h3>
+                        <h2>About Us</h2>
                         <hr />
                     </div>
                 </div>
                 <div className="row row-content">
                     <div className="col-12 col-md-6">
-                        <h2>Our History</h2>
-                        <p>Started in 2010, Ristorante con Fusion quickly established itself as a culinary icon par excellence in Hong Kong. With its unique brand of world fusion cuisine that can be found nowhere else, it enjoys patronage from the A-list clientele in Hong Kong.  Featuring four of the best three-star Michelin chefs in the world, you never know what will arrive on your plate the next time you visit us.</p>
-                        <p>The restaurant traces its humble beginnings to <em>The Frying Pan</em>, a successful chain started by our CEO, Mr. Peter Pan, that featured for the first time the world's best cuisines in a pan.</p>
+                        <h3>Our History</h3>
+                        <p>Mayara, a Brazilian chef and passionate vegetarian, opened her restaurant "Crocanos" in Recife in 2023.
+                            Crocanos quickly became a popular destination for both vegetarians and meat-eaters alike, thanks to its creative
+                            and delicious vegetarian dishes made with the freshest and highest quality ingredients. Mayara's commitment to using
+                            sustainable and environmentally friendly practices in her restaurant helped to set Crocanos apart from the competition.
+                            Today, Crocanos is one of the most well-known and respected vegetarian restaurants in Brazil,
+                            loved by customers who appreciate its unique and flavorful dishes.</p>
                     </div>
                 </div>
                 <div className="row row-content">
                     <div className="col-12">
-                        <h2>Corporate Leadership</h2>
+                        <h3>Corporate Leadership</h3>
                     </div>
                     <div className="col-12">
                         <Media list>
@@ -243,7 +247,7 @@ class Contact extends Component {
     }
 }
 
-function RenderFeature({ item, isLoading, errMess }) {
+function RenderFeature({ feature, isLoading, errMess }) {
     if (isLoading) {
         return (
             <Loading />
@@ -258,9 +262,8 @@ function RenderFeature({ item, isLoading, errMess }) {
         return (
             <Card>
                 <CardBody>
-                    <CardTitle>{item.name}</CardTitle>
-                    {item.designation ? <CardSubtitle>{item.designation}</CardSubtitle> : null}
-                    <CardText>{item.description}</CardText>
+                    <CardTitle>{feature.name}</CardTitle>
+                    <CardText>{feature.description}</CardText>
                 </CardBody>
             </Card>
         );
@@ -269,15 +272,20 @@ function RenderFeature({ item, isLoading, errMess }) {
 }
 
 function Home(props) {
+    const renderedFeatures = props.features.map((feature) => {
+        return (
+            <div>
+                < RenderFeature feature={feature} isLoading={props.featuresLoading} errMess={props.featuresErrMess} />
+            </div>
+        );
+    });
+
     return (
         <div className="container">
             <div className="row align-items-start">
-                <div className="col-12 col-md m-1">
-                    <RenderFeature item={props.dish} isLoading={props.dishesLoading} errMess={props.dishesErrMess} />
-                </div>
-                <div className="col-12 col-md m-1">
-                    <RenderFeature item={props.promotion} isLoading={props.promoLoading} errMess={props.promoErrMess} />
-                </div>
+                <h2>What we do</h2>
+                <hr />
+                <div>{renderedFeatures}</div>
             </div>
             <div>
                 <About leaders={props.leaders} isLoading={props.leadersLoading} errMess={props.leadersErrMess} />

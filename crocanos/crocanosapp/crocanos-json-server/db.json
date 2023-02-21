@@ -8,7 +8,7 @@
       "label": "Hot",
       "price": "4.99",
       "featured": true,
-      "description": "A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer."
+      "description": "A unique combination of Brocollis, Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer."
     },
     {
       "id": 1,
@@ -26,19 +26,19 @@
       "image": "images/crocanos3.png",
       "category": "appetizer",
       "label": "New",
-      "price": "1.99",
+      "price": "3.99",
       "featured": false,
-      "description": "A quintessential ConFusion experience, is it a vada or is it a donut?"
+      "description": "A fried gherkin based plate with special sauce;"
     },
     {
       "id": 3,
-      "name": "ElaiCheese Cake",
-      "image": "images/crocanos4.png",
+      "name": "Cookianos",
+      "image": "images/crocanos7.png",
       "category": "dessert",
       "label": "",
       "price": "2.99",
       "featured": false,
-      "description": "A delectable, semi-sweet New York Style Cheese Cake, with Graham cracker crust and spiced with Indian cardamoms"
+      "description": "A perfect Cookie made out of eggplants and cacau sugar. 10 Units."
     }
   ],
   "comments": [
@@ -209,15 +209,21 @@
       "id": 20
     }
   ],
-  "promotions": [
+  "features": [
     {
       "id": 0,
-      "name": "Weekend Grand Buffet",
-      "image": "images/buffet.png",
-      "label": "New",
-      "price": "19.99",
-      "featured": true,
-      "description": "Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person "
+      "name": "Restaurants",
+      "description": "Get your food and go eat it!"
+    },
+    {
+      "id": 1,
+      "name": "Veggie Network",
+      "description": "A place where everyone can share its experience with Crocanos!"
+    },
+    {
+      "id": 2,
+      "name": "Free Market",
+      "description": "A free market where everyone can sell its own products!"
     }
   ],
   "leaders": [

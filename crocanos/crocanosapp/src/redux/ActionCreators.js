@@ -8,6 +8,29 @@ export const addComment = (comment) => ({
 });
 
 
+export const fetchFeatures = () => (dispatch) => {
+
+    dispatch(featuresLoading(true));
+
+    return fetch(baseUrl + 'features')
+        .then(response => {
+            if (response.ok) {
+                return response;
+            } else {
+                var error = new Error('Error ' + response.status + ': ' + response.statusText);
+                error.response = response;
+                throw error;
+            }
+        },
+            error => {
+                var errmess = new Error(error.message);
+                throw errmess;
+            })
+        .then(response => response.json())
+        .then(features => dispatch(addFeatures(features)))
+        .catch(error => dispatch(featuresFailed(error.message)));
+}
+
 export const fetchDishes = () => (dispatch) => {
 
     dispatch(dishesLoading(true));
@@ -155,29 +178,6 @@ export const fetchLeaders = () => (dispatch) => {
         .catch(error => dispatch(leadersFailed(error.message)))
 }
 
-export const fetchPromos = () => (dispatch) => {
-
-    dispatch(promosLoading());
-
-    return fetch(baseUrl + 'promotions')
-        .then(response => {
-            if (response.ok) {
-                return response;
-            } else {
-                var error = new Error('Error ' + response.status + ': ' + response.statusText);
-                error.response = response;
-                throw error;
-            }
-        },
-            error => {
-                var errmess = new Error(error.message);
-                throw errmess;
-            })
-        .then(response => response.json())
-        .then(promos => dispatch(addPromos(promos)))
-        .catch(error => dispatch(promosFailed(error.message)));
-}
-
 export const leadersLoading = () => (dispatch) => ({
     type: ActionTypes.LEADERS_LOADING
 });
@@ -192,18 +192,18 @@ export const addLeaders = (leaders) => ({
     payload: leaders
 });
 
-export const promosLoading = () => ({
-    type: ActionTypes.PROMOS_LOADING
+export const featuresLoading = () => ({
+    type: ActionTypes.FEATURES_LOADING
 });
 
-export const promosFailed = (errmess) => ({
-    type: ActionTypes.PROMOS_FAILED,
+export const featuresFailed = (errmess) => ({
+    type: ActionTypes.FEATURES_FAILED,
     payload: errmess
 });
 
-export const addPromos = (promos) => ({
-    type: ActionTypes.ADD_PROMOS,
-    payload: promos
+export const addFeatures = (features) => ({
+    type: ActionTypes.ADD_FEATURES,
+    payload: features
 });
 
 export const dishesLoading = () => ({
