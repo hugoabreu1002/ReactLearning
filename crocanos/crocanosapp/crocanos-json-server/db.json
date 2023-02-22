@@ -41,6 +41,78 @@
       "description": "A perfect Cookie made out of eggplants and cacau sugar. 10 Units."
     }
   ],
+  "items": [
+    {
+      "id": 0,
+      "name": "Uthappizza",
+      "image": "images/crocanos4.png",
+      "category": "mains",
+      "label": "Hot",
+      "price": "4.99",
+      "featured": true,
+      "description": "A unique combination of Brocollis, Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer."
+    },
+    {
+      "id": 1,
+      "name": "Zucchipakoda",
+      "image": "images/crocanos5.png",
+      "category": "appetizer",
+      "label": "",
+      "price": "1.99",
+      "featured": false,
+      "description": "Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce"
+    },
+    {
+      "id": 2,
+      "name": "Vadonut",
+      "image": "images/crocanos6.png",
+      "category": "appetizer",
+      "label": "New",
+      "price": "3.99",
+      "featured": false,
+      "description": "A fried gherkin based plate with special sauce;"
+    },
+    {
+      "id": 3,
+      "name": "Cookianos",
+      "image": "images/crocanos8.png",
+      "category": "dessert",
+      "label": "",
+      "price": "2.99",
+      "featured": false,
+      "description": "A perfect Cookie made out of eggplants and cacau sugar. 10 Units."
+    }
+  ],
+  "posts": [
+    {
+      "id": 0,
+      "name": "Uthappizza",
+      "image": "images/crocanos2.png",
+      "category": "mains",
+      "label": "Hot",
+      "price": "4.99",
+      "featured": true,
+      "opnion": "A unique combination of Brocollis, Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer."
+    },
+    {
+      "id": 1,
+      "name": "Zucchipakoda",
+      "image": "images/crocanos5.png",
+      "opnion": "Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce"
+    },
+    {
+      "id": 2,
+      "name": "Vadonut",
+      "image": "images/crocanos6.png",
+      "opnion": "A fried gherkin based plate with special sauce;"
+    },
+    {
+      "id": 3,
+      "name": "Cookianos",
+      "image": "images/crocanos7.png",
+      "opnion": "A perfect Cookie made out of eggplants and cacau sugar. 10 Units."
+    }
+  ],
   "comments": [
     {
       "id": 0,
@@ -213,17 +285,20 @@
     {
       "id": 0,
       "name": "Restaurants",
-      "description": "Get your food and go eat it!"
+      "description": "Get your food and go eat it!",
+      "link": "restaurantmenu"
     },
     {
       "id": 1,
       "name": "Veggie Network",
-      "description": "A place where everyone can share its experience with Crocanos!"
+      "description": "A place where everyone can share its experience with Crocanos!",
+      "link": "crockynet"
     },
     {
       "id": 2,
       "name": "Free Market",
-      "description": "A free market where everyone can sell its own products!"
+      "description": "A free market where everyone can sell its own products!",
+      "link": "freemarket"
     }
   ],
   "leaders": [

@@ -3,15 +3,19 @@ import { connect } from 'react-redux';
 import { actions } from 'react-redux-form';
 import { Navigate, Route, Routes, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import { fetchComments, fetchDishes, fetchFeatures, fetchLeaders, postComment, postFeedback } from '../redux/ActionCreators';
+import { fetchComments, fetchDishes, fetchPosts, fetchItems, fetchFeatures, fetchLeaders, postComment, postFeedback } from '../redux/ActionCreators';
 import DishDetail from './DishdetailComponent';
 import Footer from './FooterComponent';
+import FreeMarket from './FreeMarketComponent';
+import CrockyNet from './CrokyNetComponent';
 import Header from './HeaderComponent';
 import Home from './HomeComponent';
 import Menu from './MenuComponent';
 
 const mapStateToProps = state => {
     return {
+        items: state.items,
+        posts: state.posts,
         dishes: state.dishes,
         features: state.features,
         comments: state.comments,
@@ -22,6 +26,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
 
     postComment: (dishId, rating, author, comment) => dispatch(postComment(dishId, rating, author, comment)),
+    fetchItems: () => { dispatch(fetchItems()) },
+    fetchPosts: () => { dispatch(fetchPosts()) },
     fetchDishes: () => { dispatch(fetchDishes()) },
     fetchFeatures: () => { dispatch(fetchFeatures()) },
     resetFeedbackForm: () => { dispatch(actions.reset('feedback')) },
@@ -49,6 +55,8 @@ function withRouter(Component) {
 class Main extends Component {
 
     componentDidMount() {
+        this.props.fetchPosts();
+        this.props.fetchItems();
         this.props.fetchDishes();
         this.props.fetchFeatures();
         this.props.fetchComments();
@@ -67,6 +75,22 @@ class Main extends Component {
                     leadersLoading={this.props.leaders.isLoading}
                     leadersErrMess={this.props.leaders.errMess}
                 />
+            );
+        }
+
+        const CrockyNetPage = () => {
+            return (
+                <div>
+                    < CrockyNet posts={this.props.posts} />
+                </div>
+            );
+        }
+
+        const FreeMarketPage = () => {
+            return (
+                <div>
+                    < FreeMarket items={this.props.items} />
+                </div>
             );
         }
 
@@ -105,8 +129,8 @@ class Main extends Component {
                             <Route path='/home' element={<HomePage leaders={this.props.leaders.leaders} resetFeedbackForm={this.props.resetFeedbackForm} postFeedback={this.props.postFeedback} />} />
                             <Route path='/restaurantmenu' element={<MenuPage />} />
                             <Route path='/restaurantmenu/:dishId' element={<DishWithId />} />
-                            <Route exact path='/crockynet' />
-                            <Route path='/freemarket' />
+                            <Route exact path='/crockynet' element={<CrockyNetPage />} />
+                            <Route path='/freemarket' element={<FreeMarketPage />} />
                             <Route path="*" element={<Navigate to="/home" replace />} />
                         </Routes>
                     </CSSTransition>

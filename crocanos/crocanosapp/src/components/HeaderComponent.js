@@ -64,11 +64,7 @@ class Header extends Component {
                                     <NavLink className="nav-link" to='/freemarket'><span className="fa fa-address-card fa-lg"></span> Free Market </NavLink>
                                 </NavItem>
                             </Nav>
-
-
                         </Collapse>
-
-
                     </div>
                 </Navbar>
 

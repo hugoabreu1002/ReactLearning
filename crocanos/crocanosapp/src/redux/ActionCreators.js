@@ -31,6 +31,52 @@ export const fetchFeatures = () => (dispatch) => {
         .catch(error => dispatch(featuresFailed(error.message)));
 }
 
+export const fetchItems = () => (dispatch) => {
+
+    dispatch(itemsLoading(true));
+
+    return fetch(baseUrl + 'items')
+        .then(response => {
+            if (response.ok) {
+                return response;
+            } else {
+                var error = new Error('Error ' + response.status + ': ' + response.statusText);
+                error.response = response;
+                throw error;
+            }
+        },
+            error => {
+                var errmess = new Error(error.message);
+                throw errmess;
+            })
+        .then(response => response.json())
+        .then(items => dispatch(addItems(items)))
+        .catch(error => dispatch(itemsFailed(error.message)));
+}
+
+export const fetchPosts = () => (dispatch) => {
+
+    dispatch(postsLoading(true));
+
+    return fetch(baseUrl + 'posts')
+        .then(response => {
+            if (response.ok) {
+                return response;
+            } else {
+                var error = new Error('Error ' + response.status + ': ' + response.statusText);
+                error.response = response;
+                throw error;
+            }
+        },
+            error => {
+                var errmess = new Error(error.message);
+                throw errmess;
+            })
+        .then(response => response.json())
+        .then(posts => dispatch(addPosts(posts)))
+        .catch(error => dispatch(postsFailed(error.message)));
+}
+
 export const fetchDishes = () => (dispatch) => {
 
     dispatch(dishesLoading(true));
@@ -73,16 +119,6 @@ export const fetchComments = () => (dispatch) => {
         .then(comments => dispatch(addComments(comments)))
         .catch(error => dispatch(commentsFailed(error.message)));
 };
-
-export const commentsFailed = (errmess) => ({
-    type: ActionTypes.COMMENTS_FAILED,
-    payload: errmess
-});
-
-export const addComments = (comments) => ({
-    type: ActionTypes.ADD_COMMENTS,
-    payload: comments
-});
 
 export const postComment = (dishId, rating, author, comment) => (dispatch) => {
 
@@ -178,6 +214,16 @@ export const fetchLeaders = () => (dispatch) => {
         .catch(error => dispatch(leadersFailed(error.message)))
 }
 
+export const commentsFailed = (errmess) => ({
+    type: ActionTypes.COMMENTS_FAILED,
+    payload: errmess
+});
+
+export const addComments = (comments) => ({
+    type: ActionTypes.ADD_COMMENTS,
+    payload: comments
+});
+
 export const leadersLoading = () => (dispatch) => ({
     type: ActionTypes.LEADERS_LOADING
 });
@@ -218,4 +264,32 @@ export const dishesFailed = (errmess) => ({
 export const addDishes = (dishes) => ({
     type: ActionTypes.ADD_DISHES,
     payload: dishes
+});
+
+export const itemsLoading = () => ({
+    type: ActionTypes.ITEMS_LOADING
+});
+
+export const itemsFailed = (errmess) => ({
+    type: ActionTypes.ITEMS_FAILED,
+    payload: errmess
+});
+
+export const addItems = (items) => ({
+    type: ActionTypes.ADD_ITEMS,
+    payload: items
+});
+
+export const postsLoading = () => ({
+    type: ActionTypes.POSTS_LOADING
+});
+
+export const postsFailed = (errmess) => ({
+    type: ActionTypes.POSTS_FAILED,
+    payload: errmess
+});
+
+export const addPosts = (posts) => ({
+    type: ActionTypes.ADD_POSTS,
+    payload: posts
 });

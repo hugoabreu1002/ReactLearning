@@ -4,8 +4,7 @@ import { Loading } from './LoadingComponent';
 import { Control, Errors, Form } from 'react-redux-form';
 import { Link } from 'react-router-dom';
 import {
-    Breadcrumb, BreadcrumbItem,
-    Button, Card, CardBody, CardSubtitle, CardText, CardTitle, Col, Label, Media, Row
+    Button, Card, CardBody, CardText, CardTitle, Col, Label, Media, Row
 } from 'reactstrap';
 
 
@@ -262,7 +261,9 @@ function RenderFeature({ feature, isLoading, errMess }) {
         return (
             <Card>
                 <CardBody>
-                    <CardTitle>{feature.name}</CardTitle>
+                    <Link to={`/${feature.link}`} >
+                        <CardTitle>{feature.name}</CardTitle>
+                    </Link>
                     <CardText>{feature.description}</CardText>
                 </CardBody>
             </Card>
